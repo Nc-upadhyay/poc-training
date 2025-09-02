@@ -1,0 +1,14 @@
+spring:
+  profiles:
+    active: qa
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ncupadhyayaws@gmail.com
+    password: Bhuwnesh@1992
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
