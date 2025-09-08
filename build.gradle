@@ -35,6 +35,12 @@ dependencies {
     testImplementation 'de.flapdoodle.embed:de.flapdoodle.embed.mongo'
     // https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk
     implementation("com.amazonaws:aws-java-sdk:1.12.778")
+    implementation 'org.springframework.boot:spring-boot-starter-aop'
+
+    // https://mvnrepository.com/artifact/org.springframework.data/spring-data-redis
+//    implementation("org.springframework.data:spring-data-redis:3.5.1")
+    implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+
 
     // https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-aws-messaging
     implementation("org.springframework.cloud:spring-cloud-starter-aws-messaging:2.2.3.RELEASE")

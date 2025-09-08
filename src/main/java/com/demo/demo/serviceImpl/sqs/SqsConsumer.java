@@ -23,7 +23,7 @@ public class SqsConsumer {
     private AmazonSQS amazonSQS;
 
     // In this we are pulling the message from queue every 5sec. and in this way we are responsible for deleting the messages.
-    @Scheduled(fixedDelay = 2*1000)
+//    @Scheduled(fixedDelay = 2*1000)
     public void consumeMessage(){
         try {
             String queueUrl=amazonSQS.getQueueUrl(queueName).getQueueUrl();

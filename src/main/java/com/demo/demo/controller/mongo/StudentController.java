@@ -3,6 +3,7 @@ package com.demo.demo.controller.mongo;
 import com.demo.demo.collections.Address;
 import com.demo.demo.collections.StudentCollections;
 import com.demo.demo.serviceImpl.mongo.StudentServiceImpl;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import lombok.extern.slf4j.Slf4j;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,7 +35,7 @@ public class StudentController {
     }
 
     @GetMapping("/get")
-    public ResponseEntity<?> getById(@RequestParam(required = false) ObjectId id){
+    public ResponseEntity<?> getById(@RequestParam(required = false) ObjectId id) throws JsonProcessingException {
         return ResponseEntity.ok(studentService.findById(id));
     }
 

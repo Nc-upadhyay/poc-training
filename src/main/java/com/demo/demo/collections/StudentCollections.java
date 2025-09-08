@@ -1,6 +1,8 @@
 package com.demo.demo.collections;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
@@ -13,6 +15,8 @@ import java.util.List;
 
 @Data
 @Document
+@AllArgsConstructor
+@NoArgsConstructor
 public class StudentCollections {
     @Id
     private ObjectId id;
