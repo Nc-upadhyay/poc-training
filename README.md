@@ -46,5 +46,23 @@ AWS lambda are server-less compute functions are fully managed by the AWS where 
 Creating aws lambda
 ![Api Lambda](src/main/resources/imges/lambda-1.png)
 Executing aws lambda
+![Api Lambda](src/main/resources/imges/lambda-2.png)
 
-![Api Lambda](src/main/resources/imges/lambad-2.png)
+##  4. Amazon Cognito
+It is aws service that provide user authentication,authorization and provide management of web and mobile 
+application. while users cognito pool is the user directory that handle user sign in and sign up process for 
+users to access the application.
+
+Cognito pool provide aws credential to grant your user access to other aws services.
+
+#### Sign In process using cognito services
+![Sign in process](src/main/resources/imges/signin.png)
+
+#### Sign up process using cognito services
+![Sign up process](src/main/resources/imges/signup.png)
+
+#### Sign in successful
+![Sign in process successful ](src/main/resources/imges/congnito_success.png)
+
+#### User sign in/up data 
+![Sing in/up data](src/main/resources/imges/cognito_pool_user_data.png)
