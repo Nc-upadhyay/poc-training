@@ -3,11 +3,12 @@
 2. [Api Authentication](#2-api-authentication)
 3. [Aws Lambda](#3-aws-lambda-)
 4. [AWS Cognito](#4-amazon-cognito)
+5. [Simple Storage Service](#5-simple-storage-service-s3)
 
 ## 1. API Gateway 
 It serves as a centralized entry point for managing and routing requests from clients to the appropriate microservices or backend services within a system.
 
-It works b/w client and micro-services.
+It works b/w client and microservices.
 
 1. Use case
    1. Authentication 
