@@ -4,6 +4,8 @@
 3. [Aws Lambda](#3-aws-lambda-)
 4. [AWS Cognito](#4-amazon-cognito)
 5. [Simple Storage Service](#5-simple-storage-service-s3)
+6. [Load Balancer](#6-load-balancer)
+7. [Auto Scaling](#7-auto-scaling)
 
 ## 1. API Gateway 
 It serves as a centralized entry point for managing and routing requests from clients to the appropriate microservices or backend services within a system.
@@ -113,3 +115,82 @@ It is used for hosting web application
 
 #### Host website in netlify
 ![Create S3 Bucket](src/main/resources/imges/netlify.png)
+
+
+## 6. Load Balancer
+A Load Balancer is a system that automatically distributes incoming network traffic (requests) across multiple servers.
+On AWS, load balancing is managed by the Elastic Load Balancing (ELB) service.ELB automatically distributes incoming application traffic across multiple EC2 instances, containers, IP addresses, or Lambdas in one or more Availability Zones
+Its main goals-:
+1. Prevent any single server from being overloaded.
+2. Increase availability and reliability (if one server fails, traffic shifts to others).
+3. Improve performance by balancing workload.
+
+#### Types of AWS Load Balancers
+1. ##### Application Load Balancer (ALB)
+- Operates at Layer 7 (Application Layer).
+- Smart routing based on HTTP/HTTPS request content (URLs, headers, query strings).
+- Supports path-based and host-based routing.
+- Best for web applications, microservices, APIs.
+
+2. ##### Network Load Balancer (NLB)
+- Operates at Layer 4 (Transport Layer).
+- Handles millions of requests per second with ultra-low latency.
+- Works at TCP, UDP, and TLS levels.
+- Best for high-performance apps, gaming, IoT, or real-time streaming.
+
+3. ##### Classic Load Balancer (CLB) (Legacy)
+- Works at both Layer 4 and Layer 7 but with limited features.
+- Older generation, gradually being replaced by ALB/NLB.
+- Still used for basic load balancing.
+
+4. ##### Gateway Load Balancer (GWLB)
+- Works at Layer 3 (Network Layer).
+- Used for transparent network traffic inspection.
+- Integrates with firewalls, intrusion detection/prevention systems.
+
+##### Routing Algorithms in AWS ELB
+- Round Robin (Default in ALB & CLB for HTTP/HTTPS)
+- Least Outstanding Requests (ALB & CLB for TCP)
+- Flow Hash Algorithm (NLB)
+- Sticky Sessions (Session Affinity)
+
+
+##### Create Load Balancer 
+![Load Balancer](src/main/resources/imges/lb.png)
+
+
+##### Target Group 
+![Load Balancer](src/main/resources/imges/lb-target-group.png)
+
+
+##### EC-2 Instances 
+![Load Balancer](src/main/resources/imges/lb-ec2.png)
+
+
+##### Running Site 
+![Load Balancer](src/main/resources/imges/running-lb.png)
+
+
+## 7. Auto Scaling
+Auto Scaling in AWS automatically adjusts the number of compute resources (like EC2 instances, ECS tasks, DynamoDB capacity, etc.) to handle application traffic efficiently.
+
+#### Goal:
+- Scale out (add instances) when demand increases.
+- Scale in (remove instances) when demand decreases.
+- Save cost while maintaining performance.
+
+#### Steps to Set Up EC2 Auto Scaling in AWS
+- Create launch template. so that other instance created according to it.
+- Create auto scaling group. define min, max and desire instances.
+- Configure scaling policy.
+
+##### Create Load Balancer
+![Load Balancer](src/main/resources/imges/ac-lb.png)
+
+
+##### Create Target Group
+![Load Balancer](src/main/resources/imges/ac-target-group.png)
+
+##### Running desire instances or minimum instances
+![Load Balancer](src/main/resources/imges/ac-instances.png)
+
